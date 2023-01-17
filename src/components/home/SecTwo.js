@@ -1,6 +1,6 @@
 import { Box, Button, CardMedia,styled, Typography } from '@mui/material'
 import React from 'react'
-import PresImage from  '../../../assets/images/PresidentImage.jpg'
+import PresImage from  '../../assets/images/PresidentImage.jpg'
 
 const ImageCard =styled(CardMedia)({
 height:'250px',

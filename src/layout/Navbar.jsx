@@ -3,11 +3,11 @@ import {AppBar,Toolbar,styled,Typography,Box,InputBase,Avatar,Menu,MenuItem,Stac
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom"
-import { pallete } from '../utils/pallete';
+import { heroPalette } from '../utils/heroPalette';
 
 
 const NavBar = styled(Toolbar)({
-  backgroundColor: pallete.primary,
+  backgroundColor: heroPalette.primary,
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
@@ -109,7 +109,7 @@ export default function Navbar() {
               sx={{
           display: {xs:"none", sm:"block"}
         }}>
-          <Link to="suitup" color={pallete.secondary}>
+          <Link to="suitup" color={heroPalette.secondary}>
               Suit Up
           </Link>
         </Typography>

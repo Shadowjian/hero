@@ -1,9 +1,8 @@
 import { Box, CardMedia, styled, Typography } from '@mui/material'
 import { padding } from '@mui/system'
-import StepsImage from  '../../../assets/images/StepsImage.jpg'
+import StepsImage from  '../../assets/images/StepsImage.jpg'
 import React from 'react'
 import SecTwo from './SecTwo'
-import Footer from './FooterSec'
 
 const StepsHeading = styled(Typography)({
 
@@ -112,11 +111,7 @@ function SecOne() {
 
             </SImage>
             </Box>
-        {/* <Box>
-             <SecTwo/>
-             
-        </Box> */}
-        {/* <Footer/>  */}
+       
         
     </Box>
     </>
