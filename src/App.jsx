@@ -5,6 +5,7 @@ import Suitup from "./layout/pages/Suitup";
 import Home from "./layout/pages/Home";
 import SearchResult from "./layout/pages/SearchResult";
 import UserProfile from "./layout/pages/UserProfile";
+import Onboarding from "./layout/pages/Component/Onboarding";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="suitup" element={<Suitup />}/>
         <Route path="profile" element={<UserProfile />}/>
         <Route path="searchresult" element={<SearchResult />}/>
+        <Route path="onboarding" element={<Onboarding />}/>
       </Routes>
       <Footer/>
     </Router>
