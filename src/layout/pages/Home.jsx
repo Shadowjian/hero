@@ -1,6 +1,6 @@
 import React from 'react'
 import SecTwo from '../pages/home/SecTwo'
-import SecOne from '../pages/home/SecOne'
+import SecOne from '../../components/home/SecOne'
 import PopularServices from '../../layout/pages/home/PopularServices'
 import Container from '@mui/material/Container'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
