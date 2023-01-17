@@ -1,22 +1,21 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Stack } from '@mui/material';
+import * as React from "react"
+import Card from "@mui/material/Card"
+import CardActions from "@mui/material/CardActions"
+import CardContent from "@mui/material/CardContent"
+import CardMedia from "@mui/material/CardMedia"
+import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
+import { Stack } from "@mui/material"
 
 export default function SearchResult() {
   return (
     <Stack direction={1} gap={3} m={2}>
-      <MediaCard/>
-      <MediaCard/>
-      <MediaCard/>
+      <MediaCard />
+      <MediaCard />
+      <MediaCard />
     </Stack>
   )
 }
-
 
 function MediaCard() {
   return (
@@ -40,5 +39,5 @@ function MediaCard() {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
-  );
+  )
 }
