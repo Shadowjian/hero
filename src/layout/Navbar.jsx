@@ -47,15 +47,15 @@ const SearchBar = styled(Box)(({ theme }) => ({
   },
 }))
 
-const UserBox = styled(Box)(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  gap: "10px",
-  [theme.breakpoints.up("lg")]: {
-    display: "none",
-  },
-  border: "solid 1px red",
-}))
+// const UserBox = styled(Box)(({ theme }) => ({
+//   display: "flex",
+//   alignItems: "center",
+//   gap: "10px",
+//   [theme.breakpoints.up("lg")]: {
+//     display: "none",
+//   },
+//   border: "solid 1px red",
+// }))
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -70,8 +70,19 @@ export default function Navbar() {
     setToggleLogin(!toggleLogin)
   }
 
+  const handleLogin = e => {
+    e.preventDefault()
+    setToggleLogin(!toggleLogin)
+    setLoggedIn(true)
+  }
+
   const handleToggleJoin = () => {
     setToggleJoin(!toggleJoin)
+  }
+  const handleJoin = e => {
+    e.preventDefault()
+    setToggleJoin(!toggleJoin)
+    setLoggedIn(true)
   }
 
   const switchForm = () => {
@@ -87,6 +98,7 @@ export default function Navbar() {
   }
   const handleSuitUp = () => {
     setSuitUp(true)
+    setOpen(false)
   }
 
   return (
@@ -153,7 +165,7 @@ export default function Navbar() {
             </Link>
 
             <Typography
-              onClick={() => setLoggedIn(true)}
+              onClick={handleToggleJoin}
               sx={{
                 "&:hover": {
                   cursor: "pointer",
@@ -163,7 +175,7 @@ export default function Navbar() {
               Join
             </Typography>
             <Typography
-              onClick={() => setLoggedIn(true)}
+              onClick={handleToggleLogin}
               sx={{
                 "&:hover": {
                   cursor: "pointer",
@@ -191,7 +203,7 @@ export default function Navbar() {
         </MenuItem>
         <MenuItem onClick={() => setOpen(false)}>My account</MenuItem>
         {!suitUp && (
-          <MenuItem onClick={() => setSuitUp(true)}>
+          <MenuItem onClick={handleSuitUp}>
             <Link to="suitup">Suit Up</Link>
           </MenuItem>
         )}
@@ -199,10 +211,12 @@ export default function Navbar() {
       </Menu>
       <LoginForm
         handleToggleLogin={handleToggleLogin}
+        handleLogin={handleLogin}
         switchForm={switchForm}
         openLogin={toggleLogin}
       />
       <JoinForm
+        handleJoin={handleJoin}
         handleToggleJoin={handleToggleJoin}
         switchForm={switchForm}
         openJoin={toggleJoin}
@@ -211,67 +225,59 @@ export default function Navbar() {
   )
 }
 
-function LoginForm({ switchForm, handleToggleLogin, openLogin }) {
+function LoginForm({ switchForm, handleToggleLogin, openLogin, handleLogin }) {
   return (
     <div>
       <Dialog open={openLogin}>
         <DialogTitle align="center">Login</DialogTitle>
         <DialogContent>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <DialogContentText display="flex" gap={1}>
-              Not yet a member?
-              <ArrowRight />
-            </DialogContentText>
-            <Button onClick={switchForm}>Join</Button>
-          </Stack>
-          <TextField
-            autoFocus
-            margin="dense"
-            name="email"
-            label="Email Address"
-            type="email"
-            fullWidth
-            // variant="standard"
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            name="password"
-            label="Password"
-            type="password"
-            fullWidth
-            // variant="standard"
-          />
+          <form onSubmit={handleLogin}>
+            <TextField
+              autoFocus
+              margin="dense"
+              name="email"
+              label="Email Address"
+              type="email"
+              fullWidth
+              // variant="standard"
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              name="password"
+              label="Password"
+              type="password"
+              fullWidth
+              // variant="standard"
+            />
+            <Stack direction="row" justifyContent="end">
+              <Button type="submit" size="large">
+                Login
+              </Button>
+              <Button onClick={handleToggleLogin} size="small" color="error">
+                Cancel
+              </Button>
+            </Stack>
+          </form>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleToggleLogin}>Cancel</Button>
-          <Button onClick={handleToggleLogin}>Login</Button>
-        </DialogActions>
+        <Stack direction="row" justifyContent="center" alignItems="center">
+          <DialogContentText display="flex" gap={1}>
+            Not yet a member?
+            <ArrowRight />
+          </DialogContentText>
+          <Button onClick={switchForm}>Join</Button>
+        </Stack>
       </Dialog>
     </div>
   )
 }
 
-function JoinForm({ switchForm, handleToggleJoin, openJoin }) {
+function JoinForm({ switchForm, handleToggleJoin, openJoin, handleJoin }) {
   return (
-    <div>
-      <Dialog open={openJoin}>
-        <DialogTitle align="center">Join</DialogTitle>
-        <DialogContent>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <DialogContentText>
-              Please Join to avail our services.
-            </DialogContentText>
-            <Button onClick={switchForm}>Login</Button>
-          </Stack>
+    <Dialog open={openJoin}>
+      <DialogTitle align="center">Join</DialogTitle>
+      <DialogContent>
+        <form onSubmit={handleJoin}>
           <TextField
             autoFocus
             margin="dense"
@@ -304,12 +310,24 @@ function JoinForm({ switchForm, handleToggleJoin, openJoin }) {
             type="password"
             fullWidth
           />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleToggleJoin}>Cancel</Button>
-          <Button onClick={handleToggleJoin}>Join</Button>
-        </DialogActions>
-      </Dialog>
-    </div>
+          <Stack direction="row" justifyContent="end">
+            <Button type="submit" size="large">
+              Join
+            </Button>
+            <Button onClick={handleToggleJoin} size="small" color="error">
+              Cancel
+            </Button>
+          </Stack>
+        </form>
+      </DialogContent>
+      <DialogActions></DialogActions>
+      <Stack direction="row" justifyContent="center" alignItems="center">
+        <DialogContentText display="flex" gap={1}>
+          Already a member?
+          <ArrowRight />
+        </DialogContentText>
+        <Button onClick={switchForm}>Login</Button>
+      </Stack>
+    </Dialog>
   )
 }
