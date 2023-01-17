@@ -1,6 +1,6 @@
 import React from 'react'
-import SecTwo from '../pages/home/SecTwo'
-import SecOne from '../pages/home/SecOne'
+import SecTwo from '../../components/home/SecTwo'
+import SecOne from '../../components/home/SecOne'
 import PopularServices from '../../layout/pages/home/PopularServices'
 import Container from '@mui/material/Container'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -12,7 +12,16 @@ import webbg from  '../../assets/images/webbg.png'
  
 import zIndex from '@mui/material/styles/zIndex'
 
- 
+// const theme = createTheme({
+//     breakpoints: {
+//       values: {
+//         mobile: 0,
+//         tablet: 640,
+//         laptop: 1024,
+//         desktop: 1200,
+//       },
+//     },
+//   });
 
 const BgImage = styled(CardMedia)({
     height:'70%',
@@ -67,11 +76,13 @@ function Home() {
         flexDirection={'column'}
         >
             <Hidden
-            only={['xs','sm','md']}
+            only={['xs','sm']}
             >
                 <WebLogo
                 sx={{
                     mt:'40px',
+                    width:{md:'20%'},
+                    height:{md:'150px'}
                 }}
                 image={Logo}
                 />
@@ -96,7 +107,7 @@ function Home() {
                             backdrop:'blur(2.7px)',
                             WebkitBackdropFilter:'blur(3.7px)',
                             height:{xs:'50px'},
-                            width:{xs:'200px',sm:'500px',md:'700px',lg:'400px'},
+                            width:{xs:'200px',sm:'500px',md:'300px',lg:'400px'},
                             }}
                             />
                             <Button
