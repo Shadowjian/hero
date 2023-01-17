@@ -1,14 +1,15 @@
 import React from 'react'
-import SecTwo from '../pages/home/SecTwo'
+import SecTwo from '../../components/home/SecTwo'
 import SecOne from '../../components/home/SecOne'
-import PopularServices from '../../layout/pages/home/PopularServices'
+import PopularServices from '../../components/home/PopularServices'
 import Container from '@mui/material/Container'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel';
 import { Box, createTheme,styled, CardMedia, TextField,Button,InputBase,Hidden, Typography, Drawer } from '@mui/material'
 import Logo from '../../assets/images/Logo.png'
 import workerImage from '../../assets/images/workerImage.png'
-import webbg from  '../../assets/images/webbg.png'
+import webbg from '../../assets/images/webbg.png'
+import { heroPalette } from '../../utils/heroPalette'
  
 import zIndex from '@mui/material/styles/zIndex'
 
@@ -29,7 +30,7 @@ const WebLogo =styled(CardMedia)({
 })
 
 const PopularBtn = styled(Button)({
-    backgroundColor:'#494747',
+    backgroundColor:heroPalette.primary,
      fontSize:'9px',
      padding:'10px',
     marginBottom:'30px',
