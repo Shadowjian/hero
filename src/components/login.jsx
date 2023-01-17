@@ -5,3 +5,12 @@ export default function login() {
     <div>login</div>
   )
 }
+
+
+
+function test() {
+  return (
+    <div>login</div>
+  )
+}
+
