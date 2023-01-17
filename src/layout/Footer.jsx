@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import { red, indigo, grey, blue } from '@mui/material/colors';
-import { pallete } from '../utils/pallete';
+import { heroPalette } from '../utils/heroPalette';
 
 const primary = blue[700]
 const accent = red[600]
@@ -13,7 +13,7 @@ export default function Footer() {
       align="center"
       sx={{
       
-      backgroundColor: pallete.primary,
+      backgroundColor: heroPalette.primary,
       color: accent,
     }}>
       Footer

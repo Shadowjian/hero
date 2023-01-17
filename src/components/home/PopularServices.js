@@ -1,10 +1,10 @@
 import { CardMedia,styled,Box,CardContent, Typography } from '@mui/material'
 import React from 'react'
 
-import Cosmetics from  '../../../assets/images/Cosmetics.jpg'
-import Entertainment from '../../../assets/images/Entertainment.jpg'
-import Household from '../../../assets/images/Household.jpg'
-import Media from '../../../assets/images/Media.jpg'
+import Cosmetics from  '../../assets/images/Cosmetics.jpg'
+import Entertainment from '../../assets/images/Entertainment.jpg'
+import Household from '../../assets/images/Household.jpg'
+import Media from '../../assets/images/Media.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import { bgcolor, fontSize } from '@mui/system'
