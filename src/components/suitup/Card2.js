@@ -1,6 +1,6 @@
 import React from 'react'
-import cardImage from '../../../assets/images/img1.jpg'
-import cardImage2 from '../../../assets/images/img2.jpg'
+import cardImage from '../../assets/images/img1.jpg'
+import cardImage2 from '../../assets/images/img2.jpg'
 import Card1 from './Card1'
 import { Box, Grid, } from '@mui/material'
 

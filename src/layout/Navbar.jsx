@@ -59,7 +59,7 @@ export default function Navbar() {
 
   return (
     <AppBar position="sticky">
-      <NavBar variant="dense">
+      <NavBar>
         <Typography
           sx={{
             display: { xs: "none", sm: "block" },

@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '@mui/material/Container'
 import { Box, Grid, Stack, Typography } from '@mui/material'
-import videoBanner from '../../../assets/videos/worker.mp4';
+import videoBanner from '../../assets/videos/worker.mp4';
 import styled from '@emotion/styled';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';

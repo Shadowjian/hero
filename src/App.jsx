@@ -5,7 +5,7 @@ import Suitup from "./layout/pages/Suitup";
 import Home from "./layout/pages/Home";
 import SearchResult from "./layout/pages/SearchResult";
 import UserProfile from "./layout/pages/UserProfile";
-import Onboarding from "./layout/pages/Component/Onboarding";
+import Onboarding from "./layout/pages/Onboarding";
 
 function App() {
 

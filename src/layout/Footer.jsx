@@ -12,10 +12,7 @@ export default function Footer() {
     <Box
       align="center"
       sx={{
-      position:"absolute",
-      bottom: "0px",
-      width: "100vw",
-      height: "10vh",
+      
       backgroundColor: pallete.primary,
       color: accent,
     }}>

@@ -1,11 +1,11 @@
 import React from 'react';
 import videoBanner from '../../assets/videos/worker.mp4';
 import {Box, Button} from '@mui/material';
-import Card2 from './Component/Card2';
-import CommunityTitle from './Component/CommunityTitle';
-import Steps from './Component/Steps';
-import Faq from './Component/Faq';
-import Calltoaction from './Component/Calltoaction';
+import Card2 from '../../components/suitup/Card2';
+import CommunityTitle from '../../components/suitup/CommunityTitle';
+import Steps from '../../components/suitup/Steps';
+import Faq from '../../components/suitup/Faq';
+import Calltoaction from '../../components/suitup/Calltoaction';
 
 
 const StyledVideo = {
