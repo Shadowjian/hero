@@ -109,7 +109,7 @@ export default function Navbar() {
               sx={{
           display: {xs:"none", sm:"block"}
         }}>
-          <Link to="suitup">
+          <Link to="suitup" color={pallete.secondary}>
               Suit Up
           </Link>
         </Typography>
