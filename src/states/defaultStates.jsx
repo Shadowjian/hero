@@ -1,20 +1,19 @@
-
 export const loginDefaultState = {
   email: "",
   password: "",
-  loggedIn: false
+  loggedIn: true,
+  isHero: false,
 }
 
-export const registerDefaultState = {
+export const joinDefaultState = {
   userName: "",
   email: "",
-  password:"",
-  registered: false
-  
+  password: "",
+  joined: false,
 }
 
 export const userDefaultState = {
   userName: "",
   email: "",
-  password:""
+  password: "",
 }

@@ -57,48 +57,55 @@ const SearchBar = styled(Box)(({ theme }) => ({
 //   border: "solid 1px red",
 // }))
 
-export default function Navbar() {
+export default function Navbar({ states, dispatchers }) {
+  const { loginState, joinState, userState, users } = states
+  const { setLoginState, setJoinState, setUserState } = dispatchers
+  console.log(loginState)
+  const { loggedIn } = loginState
   const [open, setOpen] = useState(false)
-  const [loggedIn, setLoggedIn] = useState(false)
+  // const [loggedIn, setLoggedIn] = useState(false)
   const [suitUp, setSuitUp] = useState(false)
   const [isHero, setIsHero] = useState(false)
 
-  const [toggleLogin, setToggleLogin] = useState(false)
-  const [toggleJoin, setToggleJoin] = useState(false)
+  const [showLoginForm, setShowLoginForm] = useState(false)
+  const [showJoinForm, setShowJoinForm] = useState(false)
 
-  const handleToggleLogin = () => {
-    setToggleLogin(!toggleLogin)
+  // SHOW FORMS
+  const handleShowLoginForm = () => {
+    setShowLoginForm(!showLoginForm)
   }
-
-  const handleLogin = e => {
-    e.preventDefault()
-    setToggleLogin(!toggleLogin)
-    setLoggedIn(true)
+  const handleShowJoinForm = () => {
+    setShowJoinForm(!showJoinForm)
   }
-
-  const handleToggleJoin = () => {
-    setToggleJoin(!toggleJoin)
-  }
-  const handleJoin = e => {
-    e.preventDefault()
-    setToggleJoin(!toggleJoin)
-    setLoggedIn(true)
-  }
-
   const switchForm = () => {
-    setToggleJoin(!toggleJoin)
-    setToggleLogin(!toggleLogin)
-    console.log(toggleLogin, toggleJoin)
+    setShowJoinForm(!showJoinForm)
+    setShowLoginForm(!showLoginForm)
+    console.log(showLoginForm, showJoinForm)
   }
 
   const handleLogout = () => {
     setOpen(false)
-    setLoggedIn(false)
     setSuitUp(false)
+    setLoginState({ ...loginState, loggedIn: false })
   }
   const handleSuitUp = () => {
     setSuitUp(true)
     setOpen(false)
+  }
+
+  // LOGIN VALIDATIONS
+  const handleLogin = e => {
+    e.preventDefault()
+    setLoginState({ ...loginState, loggedIn: true })
+    setShowLoginForm(!showLoginForm)
+  }
+
+  // JOIN VALIDATIONS
+
+  const handleJoin = e => {
+    e.preventDefault()
+    setLoginState({ ...loginState, loggedIn: true })
+    setShowJoinForm(!showJoinForm)
   }
 
   return (
@@ -165,7 +172,7 @@ export default function Navbar() {
             </Link>
 
             <Typography
-              onClick={handleToggleJoin}
+              onClick={handleShowJoinForm}
               sx={{
                 "&:hover": {
                   cursor: "pointer",
@@ -175,7 +182,7 @@ export default function Navbar() {
               Join
             </Typography>
             <Typography
-              onClick={handleToggleLogin}
+              onClick={handleShowLoginForm}
               sx={{
                 "&:hover": {
                   cursor: "pointer",
@@ -210,25 +217,57 @@ export default function Navbar() {
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
       <LoginForm
-        handleToggleLogin={handleToggleLogin}
+        handleShowLoginForm={handleShowLoginForm}
         handleLogin={handleLogin}
         switchForm={switchForm}
-        openLogin={toggleLogin}
+        showLoginForm={showLoginForm}
       />
       <JoinForm
         handleJoin={handleJoin}
-        handleToggleJoin={handleToggleJoin}
+        handleShowJoinForm={handleShowJoinForm}
         switchForm={switchForm}
-        openJoin={toggleJoin}
+        showJoinForm={showJoinForm}
       />
     </AppBar>
   )
 }
 
-function LoginForm({ switchForm, handleToggleLogin, openLogin, handleLogin }) {
+function LoginForm({
+  switchForm,
+  handleShowLoginForm,
+  showLoginForm,
+  handleLogin,
+}) {
+  // const [users, setUsers] = useState(userData)
+  // const [errors, setErrors] = useState({
+  //   email:"",
+  //   password:""
+  // })
+
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   // const data = new FormData(e.target)
+  //   if (!loginState.email) {
+  //     setErrors({ ...errors, email: "Email is required" });
+  //   } else if (!loginState.password){
+  //     setErrors({ ...errors, password: "Password is required" });
+  //   } else {
+  //     const user = users.find(({ email }) => email === loginState.email)
+  //     !user && setErrors({...errors, email:'email not found'})
+  //     user.password !== loginState.password ?
+  //     setErrors({...errors, password:'wrong password'}) :
+  //       setLoginState({ ...loginState, loggedIn: true })
+  //   }
+
+  //   const handleChange = (e) => {
+  //     const {name, value} = e.target
+  //     setLoginState({ ...loginState, [name]: value })
+  //     setErrors({...errors, [name]:""})
+  //   }
+
   return (
     <div>
-      <Dialog open={openLogin}>
+      <Dialog open={showLoginForm}>
         <DialogTitle align="center">Login</DialogTitle>
         <DialogContent>
           <form onSubmit={handleLogin}>
@@ -254,7 +293,7 @@ function LoginForm({ switchForm, handleToggleLogin, openLogin, handleLogin }) {
               <Button type="submit" size="large">
                 Login
               </Button>
-              <Button onClick={handleToggleLogin} size="small" color="error">
+              <Button onClick={handleShowLoginForm} size="small" color="error">
                 Cancel
               </Button>
             </Stack>
@@ -272,9 +311,14 @@ function LoginForm({ switchForm, handleToggleLogin, openLogin, handleLogin }) {
   )
 }
 
-function JoinForm({ switchForm, handleToggleJoin, openJoin, handleJoin }) {
+function JoinForm({
+  switchForm,
+  handleShowJoinForm,
+  showJoinForm,
+  handleJoin,
+}) {
   return (
-    <Dialog open={openJoin}>
+    <Dialog open={showJoinForm}>
       <DialogTitle align="center">Join</DialogTitle>
       <DialogContent>
         <form onSubmit={handleJoin}>
@@ -297,6 +341,14 @@ function JoinForm({ switchForm, handleToggleJoin, openJoin, handleJoin }) {
           <TextField
             autoFocus
             margin="dense"
+            name="birthdate"
+            label="Birthdate dd/mm/yy"
+            type="text"
+            fullWidth
+          />
+          <TextField
+            autoFocus
+            margin="dense"
             name="password"
             label="Password"
             type="password"
@@ -314,7 +366,7 @@ function JoinForm({ switchForm, handleToggleJoin, openJoin, handleJoin }) {
             <Button type="submit" size="large">
               Join
             </Button>
-            <Button onClick={handleToggleJoin} size="small" color="error">
+            <Button onClick={handleShowJoinForm} size="small" color="error">
               Cancel
             </Button>
           </Stack>
