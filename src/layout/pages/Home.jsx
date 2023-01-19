@@ -1,17 +1,31 @@
-import React from 'react'
-import SecTwo from '../pages/home/SecTwo'
-import SecOne from '../pages/home/SecOne'
-import PopularServices from '../../layout/pages/home/PopularServices'
-import Container from '@mui/material/Container'
+import React from "react"
+import SecTwo from "../../components/home/SecTwo"
+import SecOne from "../../components/home/SecOne"
+import PopularServices from "../../components/home/PopularServices"
+import Container from "@mui/material/Container"
+import PersonSearch from "@mui/icons-material/PersonSearch"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from 'react-responsive-carousel';
-import { Box, createTheme,styled, CardMedia, TextField,Button,InputBase,Hidden, Typography, Drawer } from '@mui/material'
-import Logo from '../../assets/images/Logo.png'
-import workerImage from '../../assets/images/workerImage.png'
-import webbg from '../../assets/images/webbg.png'
-import { heroPalette } from '../../utils/heroPalette'
- 
-import zIndex from '@mui/material/styles/zIndex'
+import { Carousel } from "react-responsive-carousel"
+import { OutlinedInput } from "@mui/material"
+import {
+  Box,
+  createTheme,
+  styled,
+  CardMedia,
+  TextField,
+  Button,
+  InputBase,
+  Hidden,
+  Typography,
+  Drawer,
+  FormControl,
+} from "@mui/material"
+import Logo from "../../assets/images/Logo.png"
+import workerImage from "../../assets/images/workerImage.png"
+import webbg from "../../assets/images/webbg.png"
+import { heroPalette } from "../../utils/heroPalette"
+
+import zIndex from "@mui/material/styles/zIndex"
 
 // const theme = createTheme({
 //     breakpoints: {
@@ -25,223 +39,200 @@ import zIndex from '@mui/material/styles/zIndex'
 //   });
 
 const BgImage = styled(CardMedia)({
-    height:'70%',
-    width:'100%',
-    position:'absolute',
-    zIndex:'-1',
-    margin:'0'
-    
+  height: "70%",
+  width: "100%",
+  position: "absolute",
+  zIndex: "-1",
+  margin: "0",
 })
 
-const WebLogo =styled(CardMedia)({
-    height:'250px',
-    width:'250px'
+const WebLogo = styled(CardMedia)({
+  height: "250px",
+  width: "250px",
 })
 
 const PopularBtn = styled(Button)({
-    backgroundColor:heroPalette.primary,
-     fontSize:'9px',
-     padding:'10px',
-    marginBottom:'30px',
-    color:'whitesmoke',
-    display:'flex'
-
+  backgroundColor: heroPalette.primary,
+  fontSize: "9px",
+  padding: "10px",
+  marginBottom: "30px",
+  color: "whitesmoke",
+  display: "flex",
 })
- 
 
 function Home() {
   return (
     <>
-   
-    <BgImage
+      <BgImage
         sx={{
-            margin:'0',
-            width:{xs:'100%'},
-            height:{xs:'75%',sm:'90%',md:'70%'}
+          margin: "0",
+          width: { xs: "100%" },
+          height: { xs: "90%", sm: "80%", md: "79%" },
         }}
         image={webbg}
-        />
-        <Container 
+      />
+      <Container
         sx={{
-            margin:'0',
-            paddingLeft:{xs:'0'},
-            paddingRight:{xs:'0'},
-            display:'flex',
-            justifyContent:{xs:'center',sm:'center',md:'center',lg:'left'},
-            flexDirection:{xs:'column'}
+          //   margin: "0",
+          paddingLeft: { xs: "0" },
+          paddingRight: { xs: "0" },
+          display: "flex",
+          justifyContent: {
+            xs: "center",
+            sm: "center",
+            // md: "right",
+          },
+          flexDirection: { xs: "column" },
+          //   maxWidth: { xl: "xl" },
         }}
-        maxWidth="lg"
-        >
+        maxWidth="xl"
+      >
         <Box
-        display={'flex'}
-        flexDirection={'column'}
+          display={"flex"}
+          flexDirection={"column"}
+          sx={{
+            flexDirection: { xs: "column", md: "row" },
+
+            justifyContent: { md: "space-around" },
+            // gap: { md: "200px" },
+          }}
         >
-            <Hidden
-            only={['xs','sm']}
-            >
-                <WebLogo
+          <Box
+            mt={"20px"}
+            display={"flex"}
+            // flexDirection={"column"}
+            sx={{
+              justifyContent: "center",
+              alignItems: { xs: "center" },
+              flexDirection: { xs: "column", md: "column" },
+              gap: "40px",
+              //   mt: { md: "-171px" },
+            }}
+          >
+            <Hidden only={["sm", "md", "lg", "xl"]}>
+              <FormControl>
+                <Box display={"flex"} flexDirection={"row"}>
+                  <OutlinedInput
+                    sx={{
+                      borderRadius: "10px 0px 0px 10px",
+                      bgcolor: { xs: "whitesmoke" },
+                      height: { xs: "40px" },
+                      color: "#494747",
+                      fontWeight: "bold",
+                    }}
+                    placeholder="SEARCH HERO"
+                  />
+                  <Button
+                    sx={{
+                      borderRadius: "0px 10px 10px 0px",
+                      bgcolor: { xs: "red" },
+                      width: { xs: "50px", lg: "60px" },
+                      color: "whitesmoke",
+                    }}
+                  >
+                    <PersonSearch />
+                  </Button>
+                </Box>
+              </FormControl>
+            </Hidden>
+            <Hidden only={["xs", "sm"]}>
+              <WebLogo
                 sx={{
-                    mt:'40px',
-                    width:{md:'20%'},
-                    height:{md:'150px'}
+                  //   mt: "10px",
+                  width: { md: "100%" },
+                  height: { md: "220px" },
                 }}
                 image={Logo}
-                />
+              />
             </Hidden>
-                
-                <Box
-                    display={'flex'}
-                    sx={{
-                        justifyContent:{xs:'center'},
-                        flexDirection:{xs:'row'},
-                        mt:{xs:'20px'}
-                    }}
-                    >
-                        <Hidden
-                        only={['xs']}
-                        >
-                        <TextField
-                            variant='filled'
-                            label={'SEARCH HERO'}
-                        sx={{
-                            background: 'rgba(62, 56, 56, 0.40)',
-                            backdrop:'blur(2.7px)',
-                            WebkitBackdropFilter:'blur(3.7px)',
-                            height:{xs:'50px'},
-                            width:{xs:'200px',sm:'500px',md:'300px',lg:'400px'},
-                            }}
-                            />
-                            <Button
-                            sx={{
-                                bgcolor:'red',
-                                height:'55px',
-                                color:'whitesmoke'
-                                }}
-                                >
-                                SEARCH
-                            </Button>
-                        </Hidden>
-                    
+
+            <Box
+              height={"30px"}
+              display={"flex"}
+              //   gap={1}
+              sx={{
+                flexDirection: { md: "column" },
+                // justifyContent: { md: "space-between" },
+
+                // gap: { md: "60px" },
+              }}
+              // bgcolor={'red'}
+            >
+              <Carousel
+                // height={"90px"}
+                width={"300px"}
+                display={"flex"}
+                infiniteLoop
+                autoPlay
+              >
+                <Box display={"flex"} gap={2} mt={"-20px"}>
+                  <PopularBtn>MANICURE</PopularBtn>
+                  <PopularBtn>CARPENTER</PopularBtn>
+                  <PopularBtn>PLUMBER</PopularBtn>
+                  <PopularBtn>ELECTRICIAN</PopularBtn>
                 </Box>
-                            <Box
-                            mt={'20px'}
-                            display={'flex'}
-                            flexDirection={'column'}
-                            
-                            sx={{
-                                justifyContent:'center',
-                                alignItems:{xs:'center'}
-                            }}
-                            >
-                                
-                                <Box
-                                height={'30px'}
-                                display={'flex'}
-                                gap={1}
-                                // bgcolor={'red'}
-                               
-                                >
-                                    <Carousel 
-                                        sx={{
-                                            
-                                        }}
-                                        width={'300px'}
-                                        display={'flex'}
-                                        
-                                        
-                                        infiniteLoop autoPlay
-                                    >
-                                    <Box
-                                    display={'flex'}
-                                    gap={2}
-                                    >
-                                    <PopularBtn>
-                                        MANICURE
-                                    </PopularBtn>
-                                    <PopularBtn>
-                                        CARPENTER
-                                    </PopularBtn>
-                                    <PopularBtn>
-                                        PLUMBER
-                                    </PopularBtn>
-                                    <PopularBtn>
-                                        ELECTRICIAN
-                                    </PopularBtn>
-                                    </Box>
-                                    <Box
-                                    display={'flex'}
-                                    gap={2}
-                                    >
-                                    <PopularBtn>
-                                        BAKER
-                                    </PopularBtn>
-                                    <PopularBtn>
-                                        SINGER
-                                    </PopularBtn>
-                                    <PopularBtn>
-                                        VOLCANIZE
-                                    </PopularBtn>
-                                    <PopularBtn>
-                                        YAYA
-                                    </PopularBtn>
-                                    </Box>
-                                    </Carousel>
-                                </Box>
-                              
-                            </Box>
-        </Box>
-        <Box
-        
-        display={'flex'}
-        alignItems={'center'}
-        sx={{
-            mt:{xs:'54px'},
-            flexDirection:{xs:'column'}
-        }}
-         
-            // bgcolor={'blue'}
-        >
-            <Typography
-            
-            sx={{
-                lineHeight:'1',
-                fontSize:'30px',
-                color:'red',
-                fontWeight:{xs:'bold'},
-                fontSize:{xs:'25px',sm:'50px'}
-            }}
+                <Box display={"flex"} gap={2} mt={"-20px"}>
+                  <PopularBtn>BAKER</PopularBtn>
+                  <PopularBtn>SINGER</PopularBtn>
+                  <PopularBtn>VOLCANIZE</PopularBtn>
+                  <PopularBtn>YAYA</PopularBtn>
+                </Box>
+              </Carousel>
+            </Box>
+            <Box
+              sx={{
+                textAlign: { xs: "center" },
+                display: { md: "flex" },
+                flexDirection: { md: "column" },
+                // justifyContent: { md: "space-evenly" },
+                // gap:{md:'100px'}
+              }}
             >
+              <Typography
+                sx={{
+                  lineHeight: "1",
+                  fontSize: "30px",
+                  color: "red",
+                  fontWeight: { xs: "bold" },
+                  fontSize: { xs: "25px", sm: "50px", md: "30px" },
+                }}
+              >
                 YOUR PROBLEM
-            </Typography>
-            <Typography
-            
+              </Typography>
+              <Typography
+                sx={{
+                  lineHeight: "1",
+                  color: "#494747",
+                  fontWeight: { xs: "bold" },
+                  fontSize: { xs: "45px", sm: "70px", md: "60px" },
+                }}
+              >
+                WE SOLVE
+              </Typography>
+            </Box>
+          </Box>
+
+          <CardMedia
             sx={{
-                lineHeight:'1',
-                color:'#494747',
-                fontWeight:{xs:'bold'},
-                fontSize:{xs:'45px',sm:'70px'}
+              //   padding: "10px",
+              width: { xs: "100%", md: "60%" },
+              height: { xs: "auto" },
+              //   padding: { md: "10px" },
+              display: { md: "flex" },
+              //   justifyContent: { md: "space-around" },
+
+              mt: { md: "20px", lg: "1px" },
             }}
-            >
-                 WE SOLVE
-            </Typography>
-            <CardMedia 
-             sx={{
-                width:{xs:'90%'},
-                height:{xs:'auto'}
-             }}
-            component={'img'}
-            
-            image={workerImage} 
-            />        
+            component={"img"}
+            image={workerImage}
+          />
         </Box>
-        <PopularServices/>
-        <SecOne/>
-        <SecTwo/> 
-             {/* <PopularServices/> */}
-           
-          
-        </Container>
-        
+
+        <PopularServices />
+        <SecOne />
+        <SecTwo />
+        {/* <PopularServices/> */}
+      </Container>
     </>
   )
 }
