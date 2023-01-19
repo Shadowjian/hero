@@ -29,7 +29,7 @@ const Calltoaction = () => {
     <Ctacontainer>
         <Ctabox>
             <Ctatext>Sign up and create your first Gig today</Ctatext>
-            <Link to="onboarding">
+            <Link to="../../onboarding">
                 <Button 
                 variant="contained"
                 color="success"

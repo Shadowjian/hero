@@ -1,19 +1,18 @@
-import React from 'react';
-import videoBanner from '../assets/worker.mp4';
-import {Box, Button} from '@mui/material';
-import Card2 from './Card2';
-import CommunityTitle from './CommunityTitle';
-import Steps from './Steps';
-import Faq from './Faq';
-import Calltoaction from './Calltoaction';
-
+import React from "react"
+import videoBanner from "../assets/worker.mp4"
+import { Box, Button } from "@mui/material"
+import CommunityTitle from "./CommunityTitle"
+import Steps from "./Steps"
+import Faq from "./Faq"
+import Calltoaction from "./Calltoaction"
+import CommunityInfo from "./CommunityInfo"
 
 const StyledVideo = {
   width: "100%",
   height: "70vh",
   objectFit: "cover",
   opacity: "0.6",
-};
+}
 
 const textOverlay1 = {
   position: "absolute",
@@ -25,7 +24,7 @@ const textOverlay1 = {
   alignItems: "center",
   fontSize: "50px",
   color: "black",
-};
+}
 
 const textOverlay2 = {
   position: "absolute",
@@ -37,7 +36,7 @@ const textOverlay2 = {
   alignItems: "center",
   fontSize: "25px",
   color: "black",
-};
+}
 
 const buttonStyle = {
   position: "absolute",
@@ -49,42 +48,40 @@ const Seller = () => {
   return (
     <div>
       <video style={StyledVideo} src={videoBanner} autoPlay loop muted />
-      <Box display="flex" justifyContent="center" backgroundColor="red"
+      <Box display="flex" justifyContent="center" backgroundColor="red">
+        <h1 style={textOverlay1}>Work Your Way</h1>
+        <p style={textOverlay2}>You bring the skill. We'l make earning easy.</p>
+
+        <Button
+          sx={buttonStyle}
+          variant="contained"
+          color="success"
+          size="large"
         >
-        <h1 style={textOverlay1}>
-          Work Your Way
-        </h1>
-        <p style={textOverlay2}>
-          You bring the skill. We'l make earning easy.
-        </p>
-
-          <Button sx={buttonStyle} variant='contained' color='success' size='large'>
-            Become a Hero
-          </Button>
+          Become a Hero
+        </Button>
       </Box>
 
       <Box>
-          <CommunityTitle />
-      </Box>
-
-      <Box flex={3} sx={{ padding:'18px, 100px, 100px, 100px' }}>
-          <Card2 />
+        <CommunityTitle />
       </Box>
 
       <Box>
-          <Steps />
+        <CommunityInfo />
       </Box>
 
       <Box>
-          <Faq />
+        <Steps />
+      </Box>
+
+      <Box>
+        <Faq />
       </Box>
 
       <Box>
         <Calltoaction />
       </Box>
-      
     </div>
-
   )
 }
 
