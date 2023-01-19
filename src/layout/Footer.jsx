@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import Typography from "@mui/material/Typography"
 import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material"
@@ -17,11 +16,10 @@ import ExpandLess from "@mui/icons-material/ExpandLess"
 import ExpandMore from "@mui/icons-material/ExpandMore"
 import { padding, textAlign } from "@mui/system"
 
-
 const FooterList = styled(Typography)({
   fontSize: "13px",
-  textAlign: "left",
-  paddingLeft: "15px",
+  textAlign: "center",
+  // paddingLeft: "15px",
 })
 
 // const Collapse = styled=(Typography)({
@@ -49,7 +47,6 @@ function Footer() {
   }
 
   return (
-
     <>
       <ListItemButton
         sx={{
@@ -59,7 +56,15 @@ function Footer() {
         onClick={handleClick}
       >
         <ListItemText>
-          <Typography sx={{}}>HERO</Typography>
+          <Typography
+            sx={{
+              textAlign: { xs: "center" },
+              fontSize: { lg: "25px" },
+              color: { lg: "#494747" },
+            }}
+          >
+            HERO
+          </Typography>
         </ListItemText>
         {hero ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
@@ -76,7 +81,17 @@ function Footer() {
         }}
         onClick={handleClickTwo}
       >
-        <ListItemText sx={{ fontWeight: "bold" }} primary="GET HELP" />
+        <ListItemText>
+          <Typography
+            sx={{
+              textAlign: { xs: "center" },
+              fontSize: { lg: "25px" },
+              color: { lg: "#494747" },
+            }}
+          >
+            GET HELP
+          </Typography>
+        </ListItemText>
         {about ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={about} timeout="auto" unmountOnExit>
@@ -95,7 +110,17 @@ function Footer() {
         }}
         onClick={handleClickThree}
       >
-        <ListItemText sx={{ fontWeight: "bold" }} primary="ABOUT US" />
+        <ListItemText>
+          <Typography
+            sx={{
+              textAlign: { xs: "center" },
+              fontSize: { lg: "25px" },
+              color: { lg: "#494747" },
+            }}
+          >
+            ABOUT US
+          </Typography>
+        </ListItemText>
         {help ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={help} timeout="auto" unmountOnExit>
@@ -172,7 +197,6 @@ function Footer() {
         </Box>
       </Box>
     </>
-
   )
 }
 

@@ -1,6 +1,8 @@
 import React from "react"
 import SecTwo from "../../components/home/SecTwo"
 import SecOne from "../../components/home/SecOne"
+import SkilledGroup from "../../components/home/SkilledGroup"
+// import CarouselTwo from "../../components/home/CarouselTwo"
 import PopularServices from "../../components/home/PopularServices"
 import Container from "@mui/material/Container"
 import PersonSearch from "@mui/icons-material/PersonSearch"
@@ -67,7 +69,7 @@ function Home() {
         sx={{
           margin: "0",
           width: { xs: "100%" },
-          height: { xs: "90%", sm: "80%", md: "79%" },
+          height: { xs: "90%", sm: "80%", md: "79%", xl: "70%" },
         }}
         image={webbg}
       />
@@ -92,7 +94,7 @@ function Home() {
           flexDirection={"column"}
           sx={{
             flexDirection: { xs: "column", md: "row" },
-
+            mt: { xl: "-10x" },
             justifyContent: { md: "space-around" },
             // gap: { md: "200px" },
           }}
@@ -139,7 +141,7 @@ function Home() {
               <WebLogo
                 sx={{
                   //   mt: "10px",
-                  width: { md: "100%" },
+                  width: { md: "80%" },
                   height: { md: "220px" },
                 }}
                 image={Logo}
@@ -159,19 +161,21 @@ function Home() {
               // bgcolor={'red'}
             >
               <Carousel
+                respon
                 // height={"90px"}
-                width={"300px"}
+                width={"370px"}
                 display={"flex"}
+                margin={"10px"}
                 infiniteLoop
                 autoPlay
               >
-                <Box display={"flex"} gap={2} mt={"-20px"}>
+                <Box display={"flex"} gap={2} mt={"-20px"} padding={"20px"}>
                   <PopularBtn>MANICURE</PopularBtn>
                   <PopularBtn>CARPENTER</PopularBtn>
                   <PopularBtn>PLUMBER</PopularBtn>
                   <PopularBtn>ELECTRICIAN</PopularBtn>
                 </Box>
-                <Box display={"flex"} gap={2} mt={"-20px"}>
+                <Box display={"flex"} gap={2} mt={"-20px"} padding={"20px"}>
                   <PopularBtn>BAKER</PopularBtn>
                   <PopularBtn>SINGER</PopularBtn>
                   <PopularBtn>VOLCANIZE</PopularBtn>
@@ -227,11 +231,20 @@ function Home() {
             image={workerImage}
           />
         </Box>
+        <Box
+          bgcolor={"#F5F5F5"}
+          display={"flex"}
+          flexDirection={"column"}
+          justifyContent={"center"}
+        >
+          <SkilledGroup />
+        </Box>
 
         <PopularServices />
+
         <SecOne />
+
         <SecTwo />
-        {/* <PopularServices/> */}
       </Container>
     </>
   )

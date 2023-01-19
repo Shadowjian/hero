@@ -20,7 +20,6 @@ function SecTwo() {
           //   width: { xs: "375px" },
           display: { xs: "flex" },
           justifyContent: { xs: "center" },
-
         }}
       >
         <ImageCard
@@ -31,7 +30,6 @@ function SecTwo() {
             paddingBottom: { sm: "0px" },
             height: { sm: "500px" },
             width: { xs: "375px", sm: "100%" },
-
           }}
           image={PresImage}
         >
