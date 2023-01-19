@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import Typography from "@mui/material/Typography"
 import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material"
@@ -17,7 +16,6 @@ import ExpandLess from "@mui/icons-material/ExpandLess"
 import ExpandMore from "@mui/icons-material/ExpandMore"
 import { padding, textAlign } from "@mui/system"
 
-
 const FooterList = styled(Typography)({
   fontSize: "13px",
   textAlign: "left",
@@ -29,7 +27,7 @@ const FooterList = styled(Typography)({
 //     color:'grey'
 // })
 
-function Footer() {
+function FooterSec() {
   const [hero, setHero] = useState(false)
 
   const handleClick = () => {
@@ -49,7 +47,6 @@ function Footer() {
   }
 
   return (
-
     <>
       <ListItemButton
         sx={{
@@ -172,31 +169,7 @@ function Footer() {
         </Box>
       </Box>
     </>
-
   )
 }
 
-export default Footer
-
-// import { Box } from "@mui/material"
-// import React from "react"
-// import { red, indigo, grey, blue } from "@mui/material/colors"
-// import { heroPalette } from "../utils/heroPalette"
-
-// const primary = blue[700]
-// const accent = red[600]
-// const dark = grey[900]
-
-// export default function Footer() {
-//   return (
-//     <Box
-//       align="center"
-//       sx={{
-//         backgroundColor: heroPalette.primary,
-//         color: accent,
-//       }}
-//     >
-//       Footer
-//     </Box>
-//   )
-// }
+export default FooterSec
