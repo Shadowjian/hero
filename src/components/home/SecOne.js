@@ -36,21 +36,22 @@ function SecOne() {
 
           //   bgcolor: { xs: "rgba(106, 100, 100, 0.1)" },
           bgcolor: { xs: "#F5F5F5" },
-          backdropFilter: { xs: "blur(7.8px)" },
+          //   backdropFilter: { xs: "blur(7.8px)" },
           width: { xs: "100%" },
           //   height: { xs: "100vh" },
           display: { xs: "flex", sm: "block" },
           flexDirection: { xs: "column" },
           alignItems: { xs: "center", sm: "left", lg: "center" },
-          textAlign: { xs: "center", sm: "left" },
+          textAlign: { xs: "center", sm: "left", lg: "center" },
           //  padding:{sm:'20px'}
         }}
       >
         <Typography
           variant="h6"
           sx={{
+            color: "#494747",
             textAlign: "center",
-            // fontSize: "20px",
+            fontSize: { md: "30px" },
             padding: { xs: "20px", sm: "20px" },
           }}
         >
