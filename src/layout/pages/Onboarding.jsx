@@ -1,85 +1,161 @@
 import React from "react"
 import Container from "@mui/material/Container"
-import { Box, Grid, Stack, Typography } from "@mui/material"
+
+import { Box, Button, Stack, Typography } from "@mui/material"
+
 import videoBanner from "../../assets/videos/worker.mp4"
 import styled from "@emotion/styled"
 import LightbulbIcon from "@mui/icons-material/Lightbulb"
 import AccountBoxIcon from "@mui/icons-material/AccountBox"
 import HomeWorkIcon from "@mui/icons-material/HomeWork"
 
+import { Link } from "react-router-dom"
+
+
 const BoxStyle = styled(Box)({
   height: 100,
   width: "100%",
   padding: "10px",
   display: "flex",
+
+  paddingBottom: "10px",
 })
 
-const StyledVideo = {
-  width: "80%",
-  height: "40vh",
-  objectFit: "cover",
-  opacity: "0.6",
-}
+const IconBox = styled(Box)({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  paddingRight: "5px",
+})
+
+const ContentBox = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+})
+
+const ButtonBox = styled(Box)({
+  height: 100,
+  width: "100%",
+  padding: "10px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+})
+
 
 const Onboarding = () => {
   return (
     <Container maxWidth="xl">
-      <Stack direction={{ xl: "row", md: "column" }} p={10}>
+
+      <Stack direction={{ xl: "row", sm: "column" }} p={{ lg: 10, md: 5 }}>
         <Box flex={1}>
-          <Typography variant="h3" sx={{ padding: "8px 8px 30px 8px" }}>
+          <Typography
+            fontSize={{ lg: "40px", md: "30px", sm: "20px" }}
+            padding={{
+              lg: "30px",
+              md: "20px",
+              sm: "30px",
+              xs: "30px",
+            }}
+            fontWeight={700}
+          >
+
             Ready to start selling on Fiverr? Here’s the breakdown:
           </Typography>
 
           <BoxStyle>
-            <LightbulbIcon
-              fontSize="large"
-              color="success"
-              sx={{ padding: "8px" }}
-            />
-            <Box>
-              <Typography variant={{ xl: "h5", md: "subtitle2" }}>
+
+            <IconBox>
+              <LightbulbIcon fontSize="large" color="success" />
+            </IconBox>
+            <ContentBox>
+              <Typography
+                fontSize={{ lg: "25px", md: "25px", sm: "20px", xs: "13px" }}
+                fontWeight={700}
+              >
                 Learn what makes a successful profile
               </Typography>
-              <Typography variant="subtitle2">
+              <Typography
+                fontSize={{ lg: "20px", md: "23px", sm: "18px", xs: "12px" }}
+                fontStyle={"italic"}
+              >
                 Discover the do’s and don’ts to ensure you’re always on the
                 right track.
               </Typography>
-            </Box>
+            </ContentBox>
           </BoxStyle>
 
           <BoxStyle>
-            <AccountBoxIcon
-              fontSize="large"
-              color="primary"
-              sx={{ padding: "8px" }}
-            />
-            <Box>
-              <Typography variant="h5">Create your seller profile</Typography>
-              <Typography variant="subtitle2">
+            <IconBox>
+              <AccountBoxIcon fontSize="large" color="primary" />
+            </IconBox>
+
+            <ContentBox>
+              <Typography
+                fontSize={{ lg: "25px", md: "25px", sm: "20px", xs: "13px" }}
+                fontWeight={700}
+              >
+                Create your seller profile
+              </Typography>
+              <Typography
+                fontSize={{ lg: "20px", md: "23px", sm: "18px", xs: "12px" }}
+                fontStyle={"italic"}
+              >
                 Add your profile picture, description, and professional
                 information.
               </Typography>
-            </Box>
+            </ContentBox>
           </BoxStyle>
 
           <BoxStyle>
-            <HomeWorkIcon
-              fontSize="large"
-              color="error"
-              sx={{ padding: "8px" }}
-            />
-            <Box>
-              <Typography variant="h5">Publish your Gig</Typography>
-              <Typography variant="subtitle2">
+            <IconBox>
+              <HomeWorkIcon fontSize="large" color="error" />
+            </IconBox>
+
+            <ContentBox>
+              <Typography
+                fontSize={{ lg: "25px", md: "25px", sm: "20px", xs: "13px" }}
+                fontWeight={700}
+              >
+                Publish your Gig
+              </Typography>
+              <Typography
+                fontSize={{ lg: "20px", md: "23px", sm: "18px", xs: "12px" }}
+                fontStyle={"italic"}
+              >
                 Create a Gig of the service you’re offering and start selling
                 instantly.
               </Typography>
-            </Box>
+            </ContentBox>
           </BoxStyle>
+
+          <ButtonBox>
+            <Link to="../../overview">
+              <Button variant="contained" color="success" size="large">
+                GET STARTED
+              </Button>
+            </Link>
+          </ButtonBox>
         </Box>
 
-        <Box flex={1}>
-          <video style={StyledVideo} src={videoBanner} autoPlay loop muted />
+        <Box
+          flex={1}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <video
+            src={videoBanner}
+            autoPlay
+            loop
+            muted
+            width="100%"
+            height="auto"
+            maxWidth={{ sm: "100px", md: "200px", lg: "300px" }}
+          />
+
         </Box>
       </Stack>
     </Container>

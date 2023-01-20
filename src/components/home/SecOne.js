@@ -8,7 +8,11 @@ const StepsHeading = styled(Typography)({})
 
 const StepsHeadingTwo = styled(Typography)({
   textAlign: "left",
-  color: "grey",
+
+  
+
+  color: "#424242",
+
 })
 
 const Steps = styled(Typography)({
@@ -34,6 +38,7 @@ function SecOne() {
           // backdrop-filter: blur(7.8px);
           // -webkit-backdrop-filter: blur(7.8px);
 
+
           bgcolor: { xs: "rgba(106, 100, 100, 0.1)" },
           // bgcolor:{xs:'red'},
           backdropFilter: { xs: "blur(7.8px)" },
@@ -43,12 +48,20 @@ function SecOne() {
           flexDirection: { xs: "column" },
           alignItems: { xs: "center", sm: "left" },
           textAlign: { xs: "center", sm: "left" },
+
+     
           //  padding:{sm:'20px'}
         }}
       >
         <Typography
           variant="h6"
           sx={{
+
+
+            color: "#494747",
+            textAlign: "center",
+            fontSize: { md: "30px" },
+
             padding: { xs: "20px", sm: "20px" },
           }}
         >
@@ -98,10 +111,20 @@ function SecOne() {
         >
           <SImage
             sx={{
+
               width: { sm: "100%" },
             }}
             image={StepsImage}
           ></SImage>
+
+              width: { sm: "100%", md: "100%" },
+
+              height: { sm: "30vh", md: "40vh" },
+              //   objectFit: { xs: "cover" },
+            }}
+            image={StepsImage}
+          />
+
         </Box>
       </Box>
     </>

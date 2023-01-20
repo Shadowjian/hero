@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import Typography from "@mui/material/Typography"
 import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material"
@@ -17,11 +16,10 @@ import ExpandLess from "@mui/icons-material/ExpandLess"
 import ExpandMore from "@mui/icons-material/ExpandMore"
 import { padding, textAlign } from "@mui/system"
 
-
 const FooterList = styled(Typography)({
   fontSize: "13px",
-  textAlign: "center",
-  // paddingLeft: "15px",
+  textAlign: "left",
+  paddingLeft: "15px",
 })
 
 // const Collapse = styled=(Typography)({
@@ -29,7 +27,7 @@ const FooterList = styled(Typography)({
 //     color:'grey'
 // })
 
-function Footer() {
+function FooterSec() {
   const [hero, setHero] = useState(false)
 
   const handleClick = () => {
@@ -49,7 +47,6 @@ function Footer() {
   }
 
   return (
-
     <>
       <ListItemButton
         sx={{
@@ -59,15 +56,7 @@ function Footer() {
         onClick={handleClick}
       >
         <ListItemText>
-          <Typography
-            sx={{
-              textAlign: { xs: "center" },
-              fontSize: { lg: "25px" },
-              color: { lg: "#494747" },
-            }}
-          >
-            HERO
-          </Typography>
+          <Typography sx={{}}>HERO</Typography>
         </ListItemText>
         {hero ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
@@ -84,17 +73,7 @@ function Footer() {
         }}
         onClick={handleClickTwo}
       >
-        <ListItemText>
-          <Typography
-            sx={{
-              textAlign: { xs: "center" },
-              fontSize: { lg: "25px" },
-              color: { lg: "#494747" },
-            }}
-          >
-            GET HELP
-          </Typography>
-        </ListItemText>
+        <ListItemText sx={{ fontWeight: "bold" }} primary="GET HELP" />
         {about ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={about} timeout="auto" unmountOnExit>
@@ -113,17 +92,7 @@ function Footer() {
         }}
         onClick={handleClickThree}
       >
-        <ListItemText>
-          <Typography
-            sx={{
-              textAlign: { xs: "center" },
-              fontSize: { lg: "25px" },
-              color: { lg: "#494747" },
-            }}
-          >
-            ABOUT US
-          </Typography>
-        </ListItemText>
+        <ListItemText sx={{ fontWeight: "bold" }} primary="ABOUT US" />
         {help ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={help} timeout="auto" unmountOnExit>
@@ -200,31 +169,7 @@ function Footer() {
         </Box>
       </Box>
     </>
-
   )
 }
 
-export default Footer
-
-// import { Box } from "@mui/material"
-// import React from "react"
-// import { red, indigo, grey, blue } from "@mui/material/colors"
-// import { heroPalette } from "../utils/heroPalette"
-
-// const primary = blue[700]
-// const accent = red[600]
-// const dark = grey[900]
-
-// export default function Footer() {
-//   return (
-//     <Box
-//       align="center"
-//       sx={{
-//         backgroundColor: heroPalette.primary,
-//         color: accent,
-//       }}
-//     >
-//       Footer
-//     </Box>
-//   )
-// }
+export default FooterSec

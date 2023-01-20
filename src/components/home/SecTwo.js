@@ -13,19 +13,27 @@ function SecTwo() {
       <Box
         sx={{
           // mt:{xs:'20px'},
-          // bgcolor:{xs:'rgba(106, 100, 100, 0.1)'},
+
+
+          bgcolor: { xs: "#F5F5F5" },
           // height:{xs:'250px'},
           height: { xs: "auto" },
-          width: { xs: "100%" },
+          //   width: { xs: "375px" },
+          display: { xs: "flex" },
+          justifyContent: { xs: "center" },
+
         }}
       >
         <ImageCard
           sx={{
             display: { xs: "flex" },
-            alignItems: { xs: "left" },
+
+
+            // justifyContent:{xs:'center'}
             paddingBottom: { sm: "0px" },
-            height: { sm: "400px" },
-            width: { sm: "100%" },
+            height: { sm: "500px" },
+            width: { xs: "375px", sm: "100%" },
+
           }}
           image={PresImage}
         >
@@ -33,6 +41,7 @@ function SecTwo() {
             sx={{
               display: { xs: "flex" },
               flexDirection: { xs: "column" },
+
               padding: "30px",
             }}
           >
