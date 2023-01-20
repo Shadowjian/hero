@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Footer from "./layout/Footer"
 import Navbar from "./layout/Navbar"
 import Suitup from "./layout/pages/Suitup"
@@ -11,50 +11,78 @@ import {
   loginDefaultState,
   joinDefaultState,
   userDefaultState,
+  gigsDefaultState
 } from "./states/defaultStates"
-
-const userData = [
-  {
-    email: "hajji@gmail.com",
-    password: "123",
-  },
-  {
-    email: "ann@gmail.com",
-    password: "123",
-  },
-  {
-    email: "nami@gmail.com",
-    password: "123",
-  },
-]
 
 function App() {
   const [loginState, setLoginState] = useState(loginDefaultState)
   const [joinState, setJoinState] = useState(joinDefaultState)
-  const [userState, setUserState] = useState(userDefaultState)
-  const [users, setUsers] = useState(userData)
+  const [users, setUsers] = useState([])
+  const [user, setUser] = useState(userDefaultState)
+  const [gigs, setGigs] = useState([])
+  const [searchInput, setSearchInput] = useState("")
+
+  // GET USERS
+
+  useEffect(() => {
+    getUsers()
+  }, [searchInput])
+
+  useEffect(() => {
+    !searchInput && setGigs(gigsDefaultState)
+  }, [searchInput])
+
+  const getUsers = async () => {
+    const res = await fetch("http://localhost:5000/api/users")
+    const data = await res.json()
+    setUsers(data)
+  }
+
+  // NEW USER
+  const addUser = async () => {
+    const res = await fetch("http://localhost:5000/api/users/join", {
+      method: "POST",
+      body: JSON.stringify(joinState),
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+    const data = await res.json()
+    setUsers([...users, data])
+  }
 
   const states = {
     loginState,
     joinState,
-    userState,
+    user,
     users,
+    gigs,
+    searchInput
   }
-  const stateDispatch = {
+
+  const dispatchers = {
     setLoginState,
     setJoinState,
-    setUserState,
+    setUser,
     setUsers,
+    setGigs,
+    setSearchInput
   }
 
   return (
     <Router>
-      <Navbar states={states} dispatchers={stateDispatch} />
+      <Navbar states={states} dispatchers={dispatchers} addUser={addUser} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="suitup" element={<Suitup />} />
-        <Route path="profile" element={<UserProfile />} />
-        <Route path="searchresult" element={<SearchResult />} />
+        <Route
+          path="profile"
+          element={<UserProfile states={states} dispatchers={dispatchers} />}
+        />
+        <Route
+          path="searchresult"
+          element={<SearchResult states={states} dispatchers={dispatchers} />}
+        />
         <Route path="onboarding" element={<Onboarding />} />
       </Routes>
       <Footer />
