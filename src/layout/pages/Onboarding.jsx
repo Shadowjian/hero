@@ -1,18 +1,23 @@
 import React from "react"
 import Container from "@mui/material/Container"
+
 import { Box, Button, Stack, Typography } from "@mui/material"
+
 import videoBanner from "../../assets/videos/worker.mp4"
 import styled from "@emotion/styled"
 import LightbulbIcon from "@mui/icons-material/Lightbulb"
 import AccountBoxIcon from "@mui/icons-material/AccountBox"
 import HomeWorkIcon from "@mui/icons-material/HomeWork"
+
 import { Link } from "react-router-dom"
+
 
 const BoxStyle = styled(Box)({
   height: 100,
   width: "100%",
   padding: "10px",
   display: "flex",
+
   paddingBottom: "10px",
 })
 
@@ -38,9 +43,11 @@ const ButtonBox = styled(Box)({
   alignItems: "center",
 })
 
+
 const Onboarding = () => {
   return (
     <Container maxWidth="xl">
+
       <Stack direction={{ xl: "row", sm: "column" }} p={{ lg: 10, md: 5 }}>
         <Box flex={1}>
           <Typography
@@ -53,10 +60,12 @@ const Onboarding = () => {
             }}
             fontWeight={700}
           >
+
             Ready to start selling on Fiverr? Here’s the breakdown:
           </Typography>
 
           <BoxStyle>
+
             <IconBox>
               <LightbulbIcon fontSize="large" color="success" />
             </IconBox>
@@ -146,6 +155,7 @@ const Onboarding = () => {
             height="auto"
             maxWidth={{ sm: "100px", md: "200px", lg: "300px" }}
           />
+
         </Box>
       </Stack>
     </Container>

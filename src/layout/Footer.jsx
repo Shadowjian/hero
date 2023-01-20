@@ -1,3 +1,4 @@
+
 import React, { useState } from "react"
 import Typography from "@mui/material/Typography"
 import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material"
@@ -15,6 +16,7 @@ import Collapse from "@mui/material/Collapse"
 import ExpandLess from "@mui/icons-material/ExpandLess"
 import ExpandMore from "@mui/icons-material/ExpandMore"
 import { padding, textAlign } from "@mui/system"
+
 
 const FooterList = styled(Typography)({
   fontSize: "13px",
@@ -47,6 +49,7 @@ function Footer() {
   }
 
   return (
+
     <>
       <ListItemButton
         sx={{
@@ -197,6 +200,7 @@ function Footer() {
         </Box>
       </Box>
     </>
+
   )
 }
 

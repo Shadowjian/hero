@@ -1,6 +1,7 @@
 import React from "react"
 import SecTwo from "../../components/home/SecTwo"
 import SecOne from "../../components/home/SecOne"
+
 import SkilledGroup from "../../components/home/SkilledGroup"
 // import CarouselTwo from "../../components/home/CarouselTwo"
 import PopularServices from "../../components/home/PopularServices"
@@ -9,6 +10,7 @@ import PersonSearch from "@mui/icons-material/PersonSearch"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 import { OutlinedInput } from "@mui/material"
+
 import {
   Box,
   createTheme,
@@ -20,7 +22,9 @@ import {
   Hidden,
   Typography,
   Drawer,
+
   FormControl,
+
 } from "@mui/material"
 import Logo from "../../assets/images/Logo.png"
 import workerImage from "../../assets/images/workerImage.png"
@@ -28,6 +32,7 @@ import webbg from "../../assets/images/webbg.png"
 import { heroPalette } from "../../utils/heroPalette"
 
 import zIndex from "@mui/material/styles/zIndex"
+==
 
 // const theme = createTheme({
 //     breakpoints: {
@@ -39,6 +44,7 @@ import zIndex from "@mui/material/styles/zIndex"
 //       },
 //     },
 //   });
+
 
 const BgImage = styled(CardMedia)({
   height: "70%",
@@ -54,7 +60,9 @@ const WebLogo = styled(CardMedia)({
 })
 
 const PopularBtn = styled(Button)({
+
   backgroundColor: heroPalette.primary,
+
   fontSize: "9px",
   padding: "10px",
   marginBottom: "30px",
@@ -69,19 +77,24 @@ function Home() {
         sx={{
           margin: "0",
           width: { xs: "100%" },
+
           height: { xs: "90%", sm: "80%", md: "79%", xl: "70%" },
+
         }}
         image={webbg}
       />
       <Container
         sx={{
+
           //   margin: "0",
+
           paddingLeft: { xs: "0" },
           paddingRight: { xs: "0" },
           display: "flex",
           justifyContent: {
             xs: "center",
             sm: "center",
+
             // md: "right",
           },
           flexDirection: { xs: "column" },
@@ -170,10 +183,12 @@ function Home() {
                 autoPlay
               >
                 <Box display={"flex"} gap={2} mt={"-20px"} padding={"20px"}>
+
                   <PopularBtn>MANICURE</PopularBtn>
                   <PopularBtn>CARPENTER</PopularBtn>
                   <PopularBtn>PLUMBER</PopularBtn>
                   <PopularBtn>ELECTRICIAN</PopularBtn>
+
                 </Box>
                 <Box display={"flex"} gap={2} mt={"-20px"} padding={"20px"}>
                   <PopularBtn>BAKER</PopularBtn>
@@ -227,10 +242,12 @@ function Home() {
 
               mt: { md: "20px", lg: "1px" },
             }}
+
             component={"img"}
             image={workerImage}
           />
         </Box>
+
         <Box
           bgcolor={"#F5F5F5"}
           display={"flex"}
@@ -245,6 +262,7 @@ function Home() {
         <SecOne />
 
         <SecTwo />
+
       </Container>
     </>
   )
