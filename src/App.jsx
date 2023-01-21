@@ -34,7 +34,7 @@ function App() {
   }, [searchInput])
 
   const getUsers = async () => {
-    const res = await fetch("http://localhost:5000/api/users")
+    const res = await fetch("https://hero-express-api.vercel.app/api/users")
     const data = await res.json()
     setUsers(data)
   }
