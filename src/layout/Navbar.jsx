@@ -144,13 +144,16 @@ export default function Navbar({ states, dispatchers, addUser }) {
 
   const handleJoin = async e => {
     e.preventDefault()
-    const res = await fetch("http://localhost:5000/api/users/join", {
-      method: "POST",
-      body: JSON.stringify(joinState),
-      headers: {
-        "Content-type": "application/json"
+    const res = await fetch(
+      "https://hero-express-api.vercel.app/api/users/join",
+      {
+        method: "POST",
+        body: JSON.stringify(joinState),
+        headers: {
+          "Content-type": "application/json"
+        }
       }
-    })
+    )
     const data = await res.json()
     setUsers([...users, data])
     setUser(data)

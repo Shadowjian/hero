@@ -50,7 +50,7 @@ const Seller = () => {
       <video style={StyledVideo} src={videoBanner} autoPlay loop muted />
       <Box display="flex" justifyContent="center" backgroundColor="red">
         <h1 style={textOverlay1}>Work Your Way</h1>
-        <p style={textOverlay2}>You bring the skill. We'l make earning easy.</p>
+        <p style={textOverlay2}>You bring the skill. We'll make earning easy.</p>
 
         <Button
           sx={buttonStyle}
