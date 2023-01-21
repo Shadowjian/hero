@@ -142,11 +142,7 @@ function GigCard({ gig, setShowGig, showGig, id, setId }) {
         }
       }}
     >
-      <CardMedia
-        sx={{ height: 140 }}
-        image={selectedGig.banner}
-        title={selectedGig.power}
-      />
+      <CardMedia sx={{ height: 140 }} image={gig.banner} title={gig.power} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {gig.hero} <Typography variant="body2">{gig.power}</Typography>
