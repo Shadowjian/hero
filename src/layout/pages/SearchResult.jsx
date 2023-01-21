@@ -88,7 +88,7 @@ function GigModal({ selectedGig, showGig, setShowGig }) {
     <Dialog open={showGig} onClose={handleClose}>
       <CardMedia
         sx={{ height: 240 }}
-        image="https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80"
+        image={selectedGig.banner}
         title="green iguana"
       />
       <DialogTitle>
