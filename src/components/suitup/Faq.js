@@ -4,7 +4,7 @@ import {
   AccordionSummary,
   Box,
   Divider,
-  Typography,
+  Typography
 } from "@mui/material"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import React from "react"
@@ -18,7 +18,7 @@ const AccordionContainer = styled(Box)({
   display: "flex",
   justifyContent: "center",
   alignContent: "center",
-  flexWrap: "nowrap",
+  flexWrap: "nowrap"
 })
 
 const AccordionBox = styled(Box)({
@@ -30,18 +30,18 @@ const AccordionBox = styled(Box)({
   alignContent: "center",
   alignSelf: "center",
   backgroundColor: "#f2f2e7",
-  border: "solid black 1px",
+  border: "solid black 1px"
 })
 
 const Accordioncontent = styled(Accordion)({
-  color: "white",
+  color: "white"
 })
 
 const Details = styled(AccordionDetails)({
   width: "100%",
   fontStyle: "italic",
   backgroundColor: "#f2f2e7",
-  color: "black",
+  color: "black"
 })
 
 const Faq = () => {

@@ -4,7 +4,7 @@ import PresImage from "../../assets/images/PresidentImage.jpg"
 
 const ImageCard = styled(CardMedia)({
   height: "250px",
-  width: "375px",
+  width: "375px"
 })
 
 function SecTwo() {
@@ -14,26 +14,22 @@ function SecTwo() {
         sx={{
           // mt:{xs:'20px'},
 
-
           bgcolor: { xs: "#F5F5F5" },
           // height:{xs:'250px'},
           height: { xs: "auto" },
           //   width: { xs: "375px" },
           display: { xs: "flex" },
-          justifyContent: { xs: "center" },
-
+          justifyContent: { xs: "center" }
         }}
       >
         <ImageCard
           sx={{
             display: { xs: "flex" },
 
-
             // justifyContent:{xs:'center'}
             paddingBottom: { sm: "0px" },
             height: { sm: "500px" },
-            width: { xs: "375px", sm: "100%" },
-
+            width: { xs: "375px", sm: "100%" }
           }}
           image={PresImage}
         >
@@ -42,7 +38,7 @@ function SecTwo() {
               display: { xs: "flex" },
               flexDirection: { xs: "column" },
 
-              padding: "30px",
+              padding: "30px"
             }}
           >
             <Typography
@@ -53,15 +49,15 @@ function SecTwo() {
                 fontWeight: { xs: "semibold" },
                 fontSize: { xs: "20px", sm: "30px" },
                 color: { xs: "#494747" },
-                fontWeight: { xs: "bold" },
+                fontWeight: { xs: "bold" }
               }}
             >
-              Ready to Find <br /> a Proffesional?
+              Ready to Find <br /> a Profesional?
             </Typography>
             <Button
               sx={{
                 bgcolor: "red",
-                color: "white",
+                color: "white"
               }}
             >
               GET STARTED

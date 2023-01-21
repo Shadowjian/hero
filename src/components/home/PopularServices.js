@@ -4,7 +4,7 @@ import {
   Box,
   CardContent,
   Typography,
-  Hidden,
+  Hidden
 } from "@mui/material"
 import React from "react"
 
@@ -19,7 +19,7 @@ import zIndex from "@mui/material/styles/zIndex"
 
 const PopularCards = styled(CardMedia)({
   height: "160px",
-  width: "200px",
+  width: "200px"
 })
 
 function PopularServices() {
@@ -38,14 +38,14 @@ function PopularServices() {
             flexDirection: { xs: "column" },
             alignItems: { xs: "center" },
             width: { xs: "100%" },
-            height: { xs: "200px" },
+            height: { xs: "200px" }
           }}
         >
           <Typography
             sx={{
               color: { xs: "whitesmoke" },
               fontSize: { xs: "20px" },
-              position: { xs: "static" },
+              position: { xs: "static" }
               // zIndex:'1'
             }}
           >
@@ -76,7 +76,7 @@ function PopularServices() {
                   // alignContent:{xs:'center'},
 
                   width: { xs: "250px" },
-                  height: { xs: "140px" },
+                  height: { xs: "140px" }
                 }}
                 image={Cosmetics}
               >
@@ -87,7 +87,7 @@ function PopularServices() {
                     fontSize: { xs: "15px" },
                     fontWeight: { xs: "semibold" },
                     color: { xs: "whitesmoke" },
-                    bgcolor: { xs: "rgba(106, 100, 100, 0.7)" },
+                    bgcolor: { xs: "rgba(106, 100, 100, 0.7)" }
                   }}
                   bgcolor={"whitesmoke"}
                   component="div"
@@ -113,7 +113,7 @@ function PopularServices() {
                   // alignContent:{xs:'center'},
 
                   width: { xs: "250px" },
-                  height: { xs: "140px" },
+                  height: { xs: "140px" }
                 }}
                 image={Entertainment}
               >
@@ -124,7 +124,7 @@ function PopularServices() {
                     fontSize: { xs: "15px" },
                     fontWeight: { xs: "semibold" },
                     color: { xs: "whitesmoke" },
-                    bgcolor: { xs: "rgba(106, 100, 100, 0.7)" },
+                    bgcolor: { xs: "rgba(106, 100, 100, 0.7)" }
                   }}
                   bgcolor={"whitesmoke"}
                   component="div"
@@ -150,7 +150,7 @@ function PopularServices() {
                   // alignContent:{xs:'center'},
 
                   width: { xs: "250px" },
-                  height: { xs: "140px" },
+                  height: { xs: "140px" }
                 }}
                 image={Household}
               >
@@ -161,7 +161,7 @@ function PopularServices() {
                     fontSize: { xs: "15px" },
                     fontWeight: { xs: "semibold" },
                     color: { xs: "whitesmoke" },
-                    bgcolor: { xs: "rgba(106, 100, 100, 0.9)" },
+                    bgcolor: { xs: "rgba(106, 100, 100, 0.9)" }
                   }}
                   bgcolor={"whitesmoke"}
                   component="div"
@@ -187,7 +187,7 @@ function PopularServices() {
                   // alignContent:{xs:'center'},
 
                   width: { xs: "250px" },
-                  height: { xs: "140px" },
+                  height: { xs: "140px" }
                 }}
                 image={Media}
               >
@@ -198,7 +198,7 @@ function PopularServices() {
                     fontSize: { xs: "15px" },
                     fontWeight: { xs: "semibold" },
                     color: { xs: "whitesmoke" },
-                    bgcolor: { xs: "rgba(106, 100, 100, 0.7)" },
+                    bgcolor: { xs: "rgba(106, 100, 100, 0.7)" }
                   }}
                   bgcolor={"whitesmoke"}
                   component="div"

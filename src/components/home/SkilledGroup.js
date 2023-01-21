@@ -55,7 +55,7 @@ function SkilledGroup() {
           justifyContent={"center"}
           textAlign={"center"}
         >
-          POPPULAR SERVICES
+          POPULAR SERVICES
         </Typography>
         <Box
           sx={{

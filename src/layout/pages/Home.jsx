@@ -111,7 +111,7 @@ function Home() {
               //   mt: { md: "-171px" },
             }}
           >
-            <Hidden only={["sm", "md", "lg", "xl"]}>
+            {/* <Hidden only={["sm", "md", "lg", "xl"]}>
               <FormControl>
                 <Box display={"flex"} flexDirection={"row"}>
                   <OutlinedInput
@@ -136,7 +136,7 @@ function Home() {
                   </Button>
                 </Box>
               </FormControl>
-            </Hidden>
+            </Hidden> */}
             <Hidden only={["xs", "sm"]}>
               <WebLogo
                 sx={{

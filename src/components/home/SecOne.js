@@ -58,7 +58,7 @@ function SecOne() {
             padding: { xs: "20px", sm: "20px" }
           }}
         >
-          A whole world of talented proffesional at your fingertips
+          A whole world of talented professional at your fingertips
         </Typography>
         <Steps>
           <StepsHeadingTwo
@@ -95,7 +95,7 @@ function SecOne() {
         <Steps>
           <StepsHeadingTwo fontWeight={"bold"}>Leave a Review</StepsHeadingTwo>
           After they’ve done the work, please make sure to leave a review on
-          Polido Services, to help fellow customers find the best professionals.
+          Hero, to help fellow customers find the best professionals.
         </Steps>
         <Box
         // sx={{
