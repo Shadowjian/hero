@@ -46,81 +46,84 @@ function SkilledGroup() {
   return (
     <>
       <Hidden only={["xs", "sm"]}>
-        <Typography
-          padding={"20px"}
-          color={"#494747"}
-          fontWeight={"bold"}
-          fontSize={"30px"}
-          display={"flex"}
-          justifyContent={"center"}
-          textAlign={"center"}
-        >
-          POPULAR SERVICES
-        </Typography>
         <Box
           sx={{
             bgcolor: "#F5F5F5",
             display: "flex",
+            flexDirection: "column",
             //   flexWrap: "wrap",
-            padding: "20px",
-            justifyContent: "space-around",
+            // padding: "20px",
+            justifyContent: "center",
           }}
         >
-          <PopularCards
-            sx={{
-              width: { md: "169" },
-            }}
-            image={Cosmetics}
+          <Typography
+            padding={"20px"}
+            color={"#494747"}
+            fontWeight={"bold"}
+            fontSize={"30px"}
+            display={"flex"}
+            justifyContent={"center"}
+            textAlign={"center"}
           >
-            <PopularBtn
-            //   sx={{
-            //     bgcolor: "red",
-            //     maxWidth: "100px",
-            //   }}
+            POPULAR SERVICES
+          </Typography>
+          <Box display={"flex"} justifyContent={"space-around"}>
+            <PopularCards
+              sx={{
+                width: { md: "169" },
+              }}
+              image={Cosmetics}
             >
-              COSMETICS
-            </PopularBtn>
-          </PopularCards>
-          <PopularCards image={Household}>
-            <PopularBtn
-            //   sx={{
-            //     bgcolor: "red",
-            //     maxWidth: "100px",
-            //   }}
-            >
-              Household
-            </PopularBtn>
-          </PopularCards>
-          <PopularCards image={Media}>
-            <PopularBtn
-            //   sx={{
-            //     bgcolor: "red",
-            //     maxWidth: "100px",
-            //   }}
-            >
-              Media
-            </PopularBtn>
-          </PopularCards>
-          <PopularCards image={Entertainment}>
-            <PopularBtn
-            //   sx={{
-            //     bgcolor: "red",
-            //     maxWidth: "100px",
-            //   }}
-            >
-              Entertainment
-            </PopularBtn>
-          </PopularCards>
-          <PopularCards image={Physical}>
-            <PopularBtn
-            //   sx={{
-            //     bgcolor: "red",
-            //     maxWidth: "100px",
-            //   }}
-            >
-              Physical
-            </PopularBtn>
-          </PopularCards>
+              <PopularBtn
+              //   sx={{
+              //     bgcolor: "red",
+              //     maxWidth: "100px",
+              //   }}
+              >
+                COSMETICS
+              </PopularBtn>
+            </PopularCards>
+            <PopularCards image={Household}>
+              <PopularBtn
+              //   sx={{
+              //     bgcolor: "red",
+              //     maxWidth: "100px",
+              //   }}
+              >
+                Household
+              </PopularBtn>
+            </PopularCards>
+            <PopularCards image={Media}>
+              <PopularBtn
+              //   sx={{
+              //     bgcolor: "red",
+              //     maxWidth: "100px",
+              //   }}
+              >
+                Media
+              </PopularBtn>
+            </PopularCards>
+            <PopularCards image={Entertainment}>
+              <PopularBtn
+              //   sx={{
+              //     bgcolor: "red",
+              //     maxWidth: "100px",
+              //   }}
+              >
+                Entertainment
+              </PopularBtn>
+            </PopularCards>
+            <PopularCards image={Physical}>
+              <PopularBtn
+              //   sx={{
+              //     bgcolor: "red",
+              //     maxWidth: "100px",
+              //   }}
+              >
+                Physical
+              </PopularBtn>
+            </PopularCards>
+          </Box>
         </Box>
       </Hidden>
     </>

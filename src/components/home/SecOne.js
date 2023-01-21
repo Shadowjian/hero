@@ -7,21 +7,21 @@ import SecTwo from "./SecTwo"
 const StepsHeading = styled(Typography)({})
 
 const StepsHeadingTwo = styled(Typography)({
-  textAlign: "left",
-
-  color: "#424242"
+  textAlign: "center",
+  // width: "150px",
+  color: "#424242",
 })
 
 const Steps = styled(Typography)({
-  textAlign: "left",
+  textAlign: "center",
   padding: "20px",
-  paddingTop: "0",
-  color: "grey"
+  fontSize: "20px",
+  color: "grey",
 })
 
 const SImage = styled(CardMedia)({
   height: "200px",
-  width: "375px"
+  width: "375px",
 })
 
 function SecOne() {
@@ -29,87 +29,105 @@ function SecOne() {
     <>
       <Box
         sx={{
-          //         background: rgba(106, 100, 100, 0.7);
-          // border-radius: 16px;
-          // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          // backdrop-filter: blur(7.8px);
-          // -webkit-backdrop-filter: blur(7.8px);
+          // bgcolor: { xs: "rgba(106, 100, 100,  )" },
 
-          bgcolor: { xs: "rgba(106, 100, 100, 0.1)" },
-          // bgcolor:{xs:'red'},
-          backdropFilter: { xs: "blur(7.8px)" },
           width: { xs: "100%" },
-          // height:{xs:'auto'},
+
           display: { xs: "flex", sm: "block" },
           flexDirection: { xs: "column" },
           alignItems: { xs: "center", sm: "left" },
-          textAlign: { xs: "center", sm: "left" }
+          textAlign: { xs: "center", sm: "left" },
 
           //  padding:{sm:'20px'}
         }}
       >
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#494747",
-            textAlign: "center",
-            fontSize: { md: "30px" },
-
-            padding: { xs: "20px", sm: "20px" }
-          }}
-        >
-          A whole world of talented professional at your fingertips
-        </Typography>
-        <Steps>
-          <StepsHeadingTwo
-            sx={
-              {
-                // padding:{sm:'20px'}
-              }
-            }
-            fontWeight={"bold"}
-          >
-            Tell us what you need
-          </StepsHeadingTwo>
-          Whatever the service you're looking for, we'll help you find the best
-          professional for the job.
-        </Steps>
-
-        <Steps>
-          <StepsHeadingTwo fontWeight={"bold"}>
-            Let us do the Legwork
-          </StepsHeadingTwo>
-          We’ll search thousands of professionals to find the best ones for what
-          you need.
-        </Steps>
-
-        <Steps>
-          <StepsHeadingTwo fontWeight={"bold"}>
-            Compare and Pick the Best
-          </StepsHeadingTwo>
-          Check out their profiles, reviews and portfolio to help you make a
-          decision. From the Selection, pick the best professional for what you
-          need.
-        </Steps>
-
-        <Steps>
-          <StepsHeadingTwo fontWeight={"bold"}>Leave a Review</StepsHeadingTwo>
-          After they’ve done the work, please make sure to leave a review on
-          Hero, to help fellow customers find the best professionals.
-        </Steps>
         <Box
-        // sx={{
-        //     witdh:{xs:'100%'}
-        // }}
+          // padding={"40px"}
+          // padding={"50px"}
+          bgcolor={"#F5F5F5"}
+          display={"flex"}
+          justifyContent={"center"}
+          flexDirection={"column"}
         >
-          <SImage
+          <Typography
+            variant="h6"
             sx={{
-              width: { sm: "100%", md: "100%" },
+              padding: "13px",
+              color: "#494747",
+              textAlign: "center",
+              fontSize: { md: "30px" },
 
-              height: { sm: "30vh", md: "40vh" }
+              // padding: { xs: "20px", sm: "20px" },
             }}
-            image={StepsImage}
-          />
+          >
+            A whole world of talented professional at your fingertips
+          </Typography>
+          <Box
+            sx={{
+              display: { xs: "flex" },
+              justifyContent: { xs: "center" },
+              flexDirection: { xs: "column" },
+            }}
+          >
+            <Steps>
+              <StepsHeadingTwo
+                sx={
+                  {
+                    // padding:{sm:'20px'}
+                  }
+                }
+                fontWeight={"bold"}
+              >
+                Tell us what you need
+              </StepsHeadingTwo>
+              Whatever the service you're looking for, we'll help you find the
+              best professional for the job.
+            </Steps>
+
+            <Steps>
+              <StepsHeadingTwo fontWeight={"bold"}>
+                Let us do the Legwork
+              </StepsHeadingTwo>
+              We’ll search thousands of professionals to find the best ones for
+              what you need.
+            </Steps>
+
+            <Steps>
+              <StepsHeadingTwo fontWeight={"bold"}>
+                Compare and Pick the Best
+              </StepsHeadingTwo>
+              Check out their profiles, reviews and portfolio to help you make a
+              decision. From the Selection, pick the best professional for what
+              you need.
+            </Steps>
+
+            <Steps>
+              <StepsHeadingTwo fontWeight={"bold"}>
+                Leave a Review
+              </StepsHeadingTwo>
+              After they’ve done the work, please make sure to leave a review on
+              Hero, to help fellow customers find the best professionals.
+            </Steps>
+            <Box
+              display={"flex"}
+              flexWrap={"wrap"}
+              justifyContent={"center"}
+              sx={{
+                flexDirection: { xs: "column", sm: "row" },
+              }}
+            >
+              <SImage
+                flex={4}
+                sx={{
+                  // width: { sm: "450px", lg: "100%" },
+
+                  height: { sm: "30vh", md: "40vh" },
+                }}
+                image={StepsImage}
+              />
+              <SecTwo />
+            </Box>
+          </Box>
         </Box>
       </Box>
     </>
