@@ -113,7 +113,7 @@ function SecOne() {
               flexWrap={"wrap"}
               justifyContent={"center"}
               sx={{
-                flexDirection: { xs: "column", sm: "row" },
+                flexDirection: { xs: "row", sm: "row" },
               }}
             >
               <SImage

@@ -65,22 +65,6 @@ const PopularBtn = styled(Button)({
 function Home() {
   return (
     <>
-      {/* <Container
-        sx={{
-          //   margin: "0",
-          paddingLeft: { xs: "0" },
-          paddingRight: { xs: "0" },
-          display: "flex",
-          justifyContent: {
-            xs: "center",
-            sm: "center",
-            // md: "right",
-          },
-          flexDirection: { xs: "column" },
-          //   maxWidth: { xl: "xl" },
-        }}
-        maxWidth="xl"
-      > */}
       <Box
         display={"flex"}
         flexDirection={"column"}
@@ -105,7 +89,7 @@ function Home() {
         >
           <BgImage
             sx={{
-              width: { xs: "100%", md: "164%" },
+              width: { xs: "100%", md: "166%" },
               // height: { xs: "90%", sm: "80%", md: "79%", xl: "70%" },
               height: { xs: "140vh" },
             }}
@@ -213,8 +197,6 @@ function Home() {
       <Box>
         <SecOne />
       </Box>
-
-      {/* </Container> */}
     </>
   )
 }
