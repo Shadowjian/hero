@@ -27,16 +27,17 @@ function App() {
 
   useEffect(() => {
     getUsers()
-  }, [searchInput])
-
-  useEffect(() => {
     !searchInput && setGigs(gigsDefaultState)
   }, [searchInput])
 
   const getUsers = async () => {
-    const res = await fetch("https://hero-express-api.vercel.app/api/users")
-    const data = await res.json()
-    setUsers(data)
+    try {
+      const res = await fetch("https://hero-express-api.vercel.app/api/users")
+      const data = await res.json()
+      setUsers(data)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // NEW USER
