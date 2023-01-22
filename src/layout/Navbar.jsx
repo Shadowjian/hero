@@ -86,7 +86,7 @@ export default function Navbar({ states, dispatchers, addUser }) {
   const switchForm = () => {
     setShowJoinForm(!showJoinForm)
     setShowLoginForm(!showLoginForm)
-    console.log(showLoginForm, showJoinForm)
+    // console.log(showLoginForm, showJoinForm)
   }
   const handleLogout = () => {
     setOpen(false)
@@ -138,7 +138,7 @@ export default function Navbar({ states, dispatchers, addUser }) {
     )
   }
 
-  console.log(searchInput)
+  // console.log(searchInput)
 
   // JOIN VALIDATIONS
 
@@ -241,9 +241,6 @@ export default function Navbar({ states, dispatchers, addUser }) {
               <Typography
                 color={heroPalette.txt.primary}
                 onClick={handleSuitUp}
-                sx={{
-                  display: { xs: "none", sm: "block" }
-                }}
               >
                 Suit Up
               </Typography>
@@ -252,6 +249,7 @@ export default function Navbar({ states, dispatchers, addUser }) {
             <Typography
               onClick={handleShowJoinForm}
               sx={{
+                display: { xs: "none", sm: "block" },
                 "&:hover": {
                   cursor: "pointer"
                 }
@@ -296,7 +294,9 @@ export default function Navbar({ states, dispatchers, addUser }) {
             <Link to="creategig">Create Gig</Link>
           </MenuItem>
         )}
-        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        <Link to="/">
+          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        </Link>
       </Menu>
       <LoginForm
         errors={errors}
