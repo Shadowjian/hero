@@ -22,6 +22,8 @@ function App() {
   const [user, setUser] = useState(userDefaultState)
   const [gigs, setGigs] = useState([])
   const [searchInput, setSearchInput] = useState("")
+  const [showLoginForm, setShowLoginForm] = useState(false)
+  const [showJoinForm, setShowJoinForm] = useState(false)
 
   // GET USERS
 
@@ -41,6 +43,13 @@ function App() {
   }
 
   // NEW USER
+
+  const loginSwitches = {
+    showJoinForm,
+    showLoginForm,
+    setShowJoinForm,
+    setShowLoginForm
+  }
 
   const states = {
     loginState,
@@ -62,7 +71,11 @@ function App() {
 
   return (
     <Router>
-      <Navbar states={states} dispatchers={dispatchers} />
+      <Navbar
+        states={states}
+        dispatchers={dispatchers}
+        loginSwitches={loginSwitches}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="suitup" element={<Suitup />} />
@@ -72,7 +85,13 @@ function App() {
         />
         <Route
           path="searchresult"
-          element={<SearchResult states={states} dispatchers={dispatchers} />}
+          element={
+            <SearchResult
+              states={states}
+              dispatchers={dispatchers}
+              loginSwitches={loginSwitches}
+            />
+          }
         />
         <Route path="onboarding" element={<Onboarding />} />
         <Route path="overview" element={<Overview />} />
