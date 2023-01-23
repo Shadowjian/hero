@@ -47,7 +47,12 @@ const SearchBar = styled(Box)(({ theme }) => ({
   }
 }))
 
-export default function Navbar({ states, dispatchers, addUser }) {
+export default function Navbar({
+  states,
+  dispatchers,
+  addUser,
+  loginSwitches
+}) {
   const { gigs, loginState, joinState, user, users, searchInput } = states
   const {
     setGigs,
@@ -57,6 +62,8 @@ export default function Navbar({ states, dispatchers, addUser }) {
     setUsers,
     setSearchInput
   } = dispatchers
+  const { showJoinForm, showLoginForm, setShowLoginForm, setShowJoinForm } =
+    loginSwitches
 
   const [passwordConfirm, setPasswordConfirm] = useState("")
   const { loggedIn } = loginState
@@ -70,8 +77,8 @@ export default function Navbar({ states, dispatchers, addUser }) {
     password: ""
   })
 
-  const [showLoginForm, setShowLoginForm] = useState(false)
-  const [showJoinForm, setShowJoinForm] = useState(false)
+  // const [showLoginForm, setShowLoginForm] = useState(false)
+  // const [showJoinForm, setShowJoinForm] = useState(false)
 
   // SHOW FORMS
   const handleShowLoginForm = () => {
@@ -294,7 +301,7 @@ export default function Navbar({ states, dispatchers, addUser }) {
             <Link to="creategig">Create Gig</Link>
           </MenuItem>
         )}
-        <Link to="/">
+        <Link to="searchresult">
           <MenuItem onClick={handleLogout}>Logout</MenuItem>
         </Link>
       </Menu>
@@ -340,6 +347,7 @@ function LoginForm({
       <Dialog open={showLoginForm}>
         <DialogTitle align="center">Login</DialogTitle>
         <DialogContent>
+          <DialogContentText>Login to avail our services</DialogContentText>
           <form onSubmit={handleLogin}>
             <TextField
               autoFocus
